@@ -21,10 +21,7 @@ export const useBackgroundImage = () => {
   const { address: connectedAddress } = useAccount();
   const [imageIndex, setImageIndex] = useState(0);
 
-  const {
-    data: bumpValue,
-    refetch: refetchBumpValue,
-  } = useScaffoldReadContract({
+  const { data: bumpValue, refetch: refetchBumpValue } = useScaffoldReadContract({
     contractName: "BumpContract",
     functionName: "getBumpValue",
     args: [connectedAddress],
@@ -35,7 +32,7 @@ export const useBackgroundImage = () => {
   useEffect(() => {
     if (connectedAddress && bumpValue !== undefined) {
       const addressInt = parseInt(connectedAddress.slice(2), 16) % (backgroundImages.length - 1);
-      const newImageIndex = (addressInt + bumpValue) % (backgroundImages.length - 1) + 1;
+      const newImageIndex = ((addressInt + bumpValue) % (backgroundImages.length - 1)) + 1;
       setImageIndex(newImageIndex);
     }
   }, [connectedAddress, bumpValue]);

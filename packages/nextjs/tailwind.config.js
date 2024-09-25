@@ -38,7 +38,7 @@ module.exports = {
             opacity: "80%",
           },
         },
-      }
+      },
     ],
   },
   theme: {

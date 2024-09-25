@@ -20,10 +20,7 @@ export const useBackgroundColor = () => {
   const { address: connectedAddress } = useAccount();
   const [colorIndex, setColorIndex] = useState(0);
 
-  const {
-    data: bumpValue,
-    refetch: refetchBumpValue,
-  } = useScaffoldReadContract({
+  const { data: bumpValue, refetch: refetchBumpValue } = useScaffoldReadContract({
     contractName: "BumpContract",
     functionName: "getBumpValue",
     args: [connectedAddress],

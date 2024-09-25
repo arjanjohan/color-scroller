@@ -1,10 +1,10 @@
 "use client";
 
-import { useBackgroundColor } from "~~/hooks/useBackgroundColor";
+import Image from "next/image";
+import { NextPage } from "next";
 import { PaintBrushIcon } from "@heroicons/react/24/outline";
 import { Address } from "~~/components/scaffold-eth";
-import { NextPage } from "next";
-import Image from "next/image";
+import { useBackgroundColor } from "~~/hooks/useBackgroundColor";
 
 const Home: NextPage = () => {
   const { color, changeColor, connectedAddress } = useBackgroundColor();
@@ -31,14 +31,11 @@ const Home: NextPage = () => {
           <div className="flex flex-col items-center text-center">
             <PaintBrushIcon className="h-8 w-8 fill-secondary mt-4" />
             <p className="mb-4 max-w-md">
-              Connect your wallet to change the background color.<br />
+              Connect your wallet to change the background color.
+              <br />
               Don't like the color? Click the button to change it!
             </p>
-            <button
-              className="btn btn-primary mb-8"
-              disabled={!connectedAddress}
-              onClick={changeColor}
-            >
+            <button className="btn btn-primary mb-8" disabled={!connectedAddress} onClick={changeColor}>
               Change My Color
             </button>
           </div>

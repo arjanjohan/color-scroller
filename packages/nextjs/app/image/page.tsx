@@ -1,9 +1,9 @@
 "use client";
 
+import Image from "next/image";
+import { NextPage } from "next";
 import { PaintBrushIcon } from "@heroicons/react/24/outline";
 import { Address } from "~~/components/scaffold-eth";
-import { NextPage } from "next";
-import Image from "next/image";
 import { useBackgroundImage } from "~~/hooks/useBackgroundImage";
 
 const ImagePage: NextPage = () => {
@@ -11,12 +11,13 @@ const ImagePage: NextPage = () => {
 
   return (
     <>
-      <div className="flex items-center flex-col flex-grow pt-10" 
-              style={{
-                backgroundImage: image,
-                backgroundSize: "cover",
-                backgroundRepeat: "no-repeat",
-              }}
+      <div
+        className="flex items-center flex-col flex-grow pt-10"
+        style={{
+          backgroundImage: image,
+          backgroundSize: "cover",
+          backgroundRepeat: "no-repeat",
+        }}
       >
         <div className="px-5 bg-base-100 rounded-3xl">
           <h1 className="text-center">
@@ -37,14 +38,11 @@ const ImagePage: NextPage = () => {
           <div className="flex flex-col items-center text-center">
             <PaintBrushIcon className="h-8 w-8 fill-secondary mt-4" />
             <p className="mb-4 max-w-md">
-              Connect your wallet to change the background image.<br />
+              Connect your wallet to change the background image.
+              <br />
               Don't like the image? Click the button to change it!
             </p>
-            <button
-              className="btn btn-primary mb-8"
-              disabled={!connectedAddress}
-              onClick={changeImage}
-            >
+            <button className="btn btn-primary mb-8" disabled={!connectedAddress} onClick={changeImage}>
               Change My Image
             </button>
           </div>
