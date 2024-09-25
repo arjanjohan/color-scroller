@@ -3,6 +3,8 @@
 import { useBackgroundColor } from "~~/hooks/useBackgroundColor";
 import { PaintBrushIcon } from "@heroicons/react/24/outline";
 import { Address } from "~~/components/scaffold-eth";
+import { NextPage } from "next";
+import Image from "next/image";
 
 const Home: NextPage = () => {
   const { color, changeColor, connectedAddress } = useBackgroundColor();
@@ -12,10 +14,16 @@ const Home: NextPage = () => {
       <div className="flex items-center flex-col flex-grow pt-10" style={{ backgroundColor: color }}>
         <div className="px-5 bg-base-100 rounded-3xl">
           <h1 className="text-center">
-            <span className="block text-2xl mb-2">Welcome to</span>
-            <img className="mx-auto" src="/logo_small.png" alt="Logo" />
-            <span className="block text-4xl font-bold">Color Scroller</span>
+            <span className="block text-2xl mt-4">Welcome to</span>
+            <img className="mx-auto" src="/logo_small.png" alt="Color Scroller Logo" />
           </h1>
+          <div className="text-center mt-4">
+            <p className="text-lg font-medium">Powered by</p>
+            <div className="flex justify-center items-center mb-5 space-x-5">
+              <Image src="/scroll-logo.svg" alt="Scroll Logo" width={100} height={100} />
+              <Image src="/alchemy-logo-blue-gradient.svg" alt="Alchemy Logo" width={100} height={100} />
+            </div>
+          </div>
           <div className="flex justify-center items-center space-x-2 flex-col sm:flex-row">
             <p className="my-2 font-medium">Connected Address:</p>
             <Address address={connectedAddress} />
