@@ -3,6 +3,7 @@ import { useAccount } from "wagmi";
 import { useScaffoldReadContract, useScaffoldWriteContract } from "~~/hooks/scaffold-eth";
 
 const backgroundColors = [
+  "#f4f8ff",
   "white",
   "red",
   "green",
@@ -14,6 +15,24 @@ const backgroundColors = [
   "brown",
   "gray",
   "black",
+  "cyan",
+  "magenta",
+  "lime",
+  "teal",
+  "indigo",
+  "maroon",
+  "navy",
+  "olive",
+  "silver",
+  "aqua",
+  "fuchsia",
+  "coral",
+  "turquoise",
+  "lavender",
+  "beige",
+  "crimson",
+  "gold",
+  "plum",
 ];
 
 export const useBackgroundColor = () => {

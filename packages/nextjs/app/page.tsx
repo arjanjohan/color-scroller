@@ -15,7 +15,7 @@ const Home: NextPage = () => {
         <div className="px-5 bg-base-100 rounded-3xl">
           <h1 className="text-center">
             <span className="block text-2xl mt-4">Welcome to</span>
-            <Image className="mx-auto" src="/logo_small.png" alt="Color Scroller Logo" width={100} height={100} />
+            <Image className="mx-auto" src="/logo_small.png" alt="Color Scroller Logo" width={400} height={400} />
           </h1>
           <div className="text-center mt-4">
             <p className="text-lg font-medium">Powered by</p>
