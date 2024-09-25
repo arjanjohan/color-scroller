@@ -22,7 +22,7 @@ const ImagePage: NextPage = () => {
         <div className="px-5 bg-base-100 rounded-3xl">
           <h1 className="text-center">
             <span className="block text-2xl mt-4">Welcome to</span>
-            <img className="mx-auto" src="/logo_small.png" alt="Color Scroller Logo" />
+            <Image className="mx-auto" src="/logo_small.png" alt="Color Scroller Logo" width={100} height={100} />
           </h1>
           <div className="text-center mt-4">
             <p className="text-lg font-medium">Powered by</p>
@@ -40,7 +40,7 @@ const ImagePage: NextPage = () => {
             <p className="mb-4 max-w-md">
               Connect your wallet to change the background image.
               <br />
-              Don't like the image? Click the button to change it!
+              Don&apos;t like the image? Click the button to change it!
             </p>
             <button className="btn btn-primary mb-8" disabled={!connectedAddress} onClick={changeImage}>
               Change My Image
