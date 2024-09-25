@@ -1,0 +1,35 @@
+{
+  "language": "Solidity",
+  "sources": {
+    "contracts/BumpContract.sol": {
+      "content": "//SPDX-License-Identifier: MIT\npragma solidity >=0.8.0 <0.9.0;\n\n/**\n * A smart contract that allows users to view and increment their bump value\n */\ncontract BumpContract {\n    // Mapping to store bump values for each address\n    mapping(address => uint8) public bumpValues;\n\n    // Event to emit when a bump value is incremented\n    event BumpIncremented(address indexed user, uint8 newValue);\n\n    /**\n     * Function to get the bump value for a specific address\n     * @param _address The address to check the bump value for\n     * @return The bump value for the given address\n     */\n    function getBumpValue(address _address) public view returns (uint8) {\n        return bumpValues[_address];\n    }\n\n    /**\n     * Function to increment the bump value for the caller's address\n     * Resets to 0 if the maximum value is reached\n     */\n    function incrementBump() public {\n        if (bumpValues[msg.sender] == type(uint8).max) {\n            bumpValues[msg.sender] = 0;\n        } else {\n            bumpValues[msg.sender] += 1;\n        }\n        emit BumpIncremented(msg.sender, bumpValues[msg.sender]);\n    }\n}\n"
+    }
+  },
+  "settings": {
+    "optimizer": {
+      "enabled": true,
+      "runs": 200
+    },
+    "outputSelection": {
+      "*": {
+        "*": [
+          "abi",
+          "evm.bytecode",
+          "evm.deployedBytecode",
+          "evm.methodIdentifiers",
+          "metadata",
+          "devdoc",
+          "userdoc",
+          "storageLayout",
+          "evm.gasEstimates"
+        ],
+        "": [
+          "ast"
+        ]
+      }
+    },
+    "metadata": {
+      "useLiteralContent": true
+    }
+  }
+}
