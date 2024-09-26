@@ -39,6 +39,7 @@ The project uses Alchemy for blockchain interactions. Ensure that your `hardhat.
 
 ## Links
 * [Vercel deployment](https://color-scroller.vercel.app/)
+* [Demo video](https://youtu.be/W1DyHRFzrQo)
 * [Alchemy configured in hardhat.config.ts](packages/hardhat/hardhat.config.ts#L49)
 * [Deployed BumpContract.sol on Scroll Sepolia](https://sepolia.scrollscan.com/address/0xb4e9A5BC64DC07f890367F72941403EEd7faDCbB#code)
 
